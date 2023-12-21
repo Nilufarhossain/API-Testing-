@@ -13,6 +13,7 @@ Newman for report generation
 Lessons Learned
 ---------------------------------
 API testing was not mandatory for this Application but after the Login authentication was done the API generated a Token, I pasted the token in a Token converter and discovered that it decoded the user's email address and password directly, Which is a security concern. It helped me learn about my API's performance and I could validate why the system was facing some errors and fix them asap.
+
 🚀 About Me
 ----------------------------
 I'm a Junior Software QA Engineer Learning about new things in QA world and loving it more every time.
