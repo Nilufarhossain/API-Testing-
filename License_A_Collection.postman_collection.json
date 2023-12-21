@@ -1,0 +1,1242 @@
+{
+	"info": {
+		"_postman_id": "213e0d0e-a1a6-49ef-a799-81ff49d8a450",
+		"name": "License_A_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30728744"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var token = pm.response.json();\r",
+							"pm.environment.set(\"token\",token.data.access_token)\r",
+							"\r",
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": ""
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-services.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-services.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"permit1@yopmail.com\",\"password\":\"Abc123!\",\"organization_id\":null,\"organogram_id\":null,\"web_device_token\":\"\",\"device_type\":\"web\"}"
+				},
+				"url": {
+					"raw": "{{Base_url}}/auth/oauth/login",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "License from",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI5Mjc5MiwiZXhwIjoxNzAyNDAwNzkyLCJqdGkiOiJ2V0hrQlpWMzFZIiwib3JnYW5vZ3JhbV9pZCI6bnVsbCwib3JnYW5pemF0aW9uX2lkIjpudWxsfQ._ZUMiU6DNK-TYz5qnkaye4NgRnLNhacNeWgvpRfuO_Q"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "Cookie",
+						"value": "token={{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/fee-information/get-license-fee/7/67",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"fee-information",
+						"get-license-fee",
+						"7",
+						"67"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update step1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI5Mjc5MiwiZXhwIjoxNzAyNDAwNzkyLCJqdGkiOiJ2V0hrQlpWMzFZIiwib3JnYW5vZ3JhbV9pZCI6bnVsbCwib3JnYW5pemF0aW9uX2lkIjpudWxsfQ._ZUMiU6DNK-TYz5qnkaye4NgRnLNhacNeWgvpRfuO_Q"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"activeStep\":1,\"current_active_step\":2,\"activities_purpose\":\"Use\",\"applicant_name_en\":\"Nilufar\",\"applicant_name_bn\":\"নিলুফার\",\"applicant_nid\":\"2324324232\",\"applicant_division_id\":5,\"applicant_district_id\":12,\"applicant_upazila_id\":397,\"applicant_address\":\"হব০৯\",\"applicant_phone\":null,\"applicant_mobile\":\"01789099892\",\"applicant_email\":abc@yopmail.com,\"institute_name_en\":\"REBAid\",\"institute_name_bn\":\"আর দি বি আইড\",\"institute_designation_en\":\"ed\",\"institute_designation_bn\":\"দ\",\"institute_division_id\":5,\"institute_district_id\":12,\"institute_upazila_id\":397,\"institute_address_en\":\"Nikunjo1 , Road 09/B\",\"institute_address_bn\":\"নিকুঞ্জ১ , রোড ৯/বি\",\"institute_phone\":018239729377,\"is_warehouse_address_same\":1,\"license_attachment\":\"\",\"amendment_attachment\":\"\"}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/class-a-application/4",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"class-a-application",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"if (new Date(pm.response.json().data.a_rco_cert_expiry_date) < new Date().setDate(new Date().getDate() + 100)) {\r",
+							"    pm.test(\"Renew RCO\");\r",
+							"} else {\r",
+							"    pm.test(\"RCO Valid\");\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI5MzY0NSwiZXhwIjoxNzAyNDAxNjQ1LCJqdGkiOiJmSVdmMHR4RmhBIiwib3JnYW5vZ3JhbV9pZCI6bnVsbCwib3JnYW5pemF0aW9uX2lkIjpudWxsfQ.wAQLdsDXiizmFj2TLL0z8r3tns4QoIRE4W3A4TNRZ8I"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"activeStep\":2,\"current_active_step\":3,\"authorized_name\":\"মিথুন \",\"authorized_nid\":\"9829737287\",\"authorized_dob\":\"2008-12-04\",\"authorized_address\":\"মিরপুর ২\",\"authorized_division_id\":5,\"authorized_district_id\":12,\"authorized_upazila_id\":396,\"authorized_telephone\":null,\"authorized_fax\":null,\"authorized_mobile\":\"02982983787\",\"authorized_email\":null,\"authorized_designation\":null,\"rco_application_id\":2,\"certificate_number\":null,\"certificate_attachment\":\"\",\"authorized_signature\":\"\"}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/class-a-application/4",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"class-a-application",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "step 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI5MzY0NSwiZXhwIjoxNzAyNDAxNjQ1LCJqdGkiOiJmSVdmMHR4RmhBIiwib3JnYW5vZ3JhbV9pZCI6bnVsbCwib3JnYW5pemF0aW9uX2lkIjpudWxsfQ.wAQLdsDXiizmFj2TLL0z8r3tns4QoIRE4W3A4TNRZ8I"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"activeStep\":3,\"current_active_step\":4,\"use_purpose_details\":\"defefvfg fegergre\",\"use_purpose_attachment\":\"\",\"layout_details\":\"retretret ertretre\",\"layout_attachment\":\"\",\"maintenance_details\":\"retrettr\",\"maintenance_attachment\":\"\",\"quality_details\":\"retret\",\"quality_attachment\":\"\",\"schedule_details\":\"retret\",\"schedule_attachment\":\"\",\"organogram_details\":\"retret\",\"organogram_attachment\":\"6576f2e296f77\",\"supervisors\":[]}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/class-a-application/4",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"class-a-application",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "step 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var JsonData = pm.response.json();\r",
+							"\r",
+							"pm.test('Response time is less than 1000ms', function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"})\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test('Status test', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI5NDI0NiwiZXhwIjoxNzAyNDAyMjQ2LCJqdGkiOiJSM2hsUldYRDd5Iiwib3JnYW5vZ3JhbV9pZCI6bnVsbCwib3JnYW5pemF0aW9uX2lkIjpudWxsfQ.CctpYukk6CQ11wxzwvRiqMdNb0grRspWhyBwvqAxB5E"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"activeStep\":4,\"current_active_step\":5,\"specialist_name\":null,\"specialist_expertise\":null,\"specialist_education\":null,\"specialist_qualification\":null,\"specialist_experience\":null,\"specialist_recognition\":null,\"specialist_division_id\":null,\"specialist_district_id\":null,\"specialist_upazila_id\":null,\"specialist_phone\":01780934522,\"specialist_address\":Nikunjo1,\"specialist_mobile_number\":null,\"specialist_email\":abc@yopmail.com,\"radioactive_material_users\":[]}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/class-a-application/4",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"class-a-application",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "step 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var JsonData= pm.response.json()\r",
+							"pm.test('Specialist mobile number must have 11 digit', function () {\r",
+							"    pm.expect(JsonData.data.applicant_mobile).to.have.lengthOf(11);\r",
+							"})\r",
+							"\r",
+							"pm.test('Status test', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI5NDI0NiwiZXhwIjoxNzAyNDAyMjQ2LCJqdGkiOiJSM2hsUldYRDd5Iiwib3JnYW5vZ3JhbV9pZCI6bnVsbCwib3JnYW5pemF0aW9uX2lkIjpudWxsfQ.CctpYukk6CQ11wxzwvRiqMdNb0grRspWhyBwvqAxB5E"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"activeStep\":5,\"current_active_step\":6,\"license_renewal_fee_id\":12,\"materials_extra_details\":null,\"materials_extra_attachment\":\"\",\"radioactive_materials\":[{\"exempt_activity_id\":273,\"chemical_physical_form\":null,\"manufacturer_name\":null,\"model_number\":null,\"sealed_source_dynamism\":null,\"sealed_source_unit_id\":null,\"sealed_source_date\":\"\",\"unsealed_source_dynamism\":null,\"unsealed_source_unit_id\":null,\"unsealed_source_date\":\"\"}],\"source_warehousings\":[]}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/class-a-application/4",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"class-a-application",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step 6",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var JsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Attachment should be below 2KB\", function () {\r",
+							"    pm.expect(JsonData.data.warehouse_handling_attachment.length).to.be.below(2048);\r",
+							"});\r",
+							"\r",
+							"pm.test('Status test', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI4ODY3MiwiZXhwIjoxNzAyMzk2NjcyLCJqdGkiOiI1NjlEeUlERDVTIiwidXNlcm5hbWUiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicGFzc3dvcmQiOiJBYmMxMjMhIiwib3JnYW5pemF0aW9uX2lkIjpudWxsLCJvcmdhbm9ncmFtX2lkIjpudWxsLCJkZXZpY2VfdHlwZSI6IndlYiIsIndlYl9kZXZpY2VfdG9rZW4iOm51bGx9.kMnEFxvzv-cBe0nE_qXyiLlC-KaOaWhJFTMTSyAp2tg"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"activeStep\":6,\"current_active_step\":7,\"calibration_agency\":null,\"calibration_agency_address\":null,\"calibration_attachment\":\"\",\"warehouse_handling_facility\":[\"LAB_PLANT_SMOKE\",\"WAREHOUSE_RESERVOIER\",\"REMOTE_HANDLING_TOOLS\"],\"warehouse_handling_attachment\":\"6577d1037c1e9\",\"waste_storage_disposal\":null,\"waste_storage_disposal_attachment\":\"\",\"radiation_control_details\":null,\"radiation_control_attachment\":\"6577d1160da92\",\"fire_safety_details\":\"d\",\"fire_safety_attachment\":\"6577d11c4feaa\",\"emergency_preparation_details\":null,\"emergency_preparation_attachment\":\"6577d12231878\",\"measuring_equipments\":[],\"personnel_monitorings\":[]}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/class-a-application/4",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"class-a-application",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "step7",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI4ODY3MiwiZXhwIjoxNzAyMzk2NjcyLCJqdGkiOiI1NjlEeUlERDVTIiwidXNlcm5hbWUiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicGFzc3dvcmQiOiJBYmMxMjMhIiwib3JnYW5pemF0aW9uX2lkIjpudWxsLCJvcmdhbm9ncmFtX2lkIjpudWxsLCJkZXZpY2VfdHlwZSI6IndlYiIsIndlYl9kZXZpY2VfdG9rZW4iOm51bGx9.kMnEFxvzv-cBe0nE_qXyiLlC-KaOaWhJFTMTSyAp2tg"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"activeStep\":7,\"current_active_step\":8,\"tranining_details\":\"h\",\"training_attachment\":\"\",\"caretaker_trainings\":[],\"caretaker_experiences\":[]}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/class-a-application/4",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"class-a-application",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "step8",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var Jsondata= pm.response.json();\r",
+							"pm.test('Step Validation', function () {\r",
+							"    pm.expect(pm.request.activeStep).to.equal(pm.request.current_active_step);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI4ODY3MiwiZXhwIjoxNzAyMzk2NjcyLCJqdGkiOiI1NjlEeUlERDVTIiwidXNlcm5hbWUiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicGFzc3dvcmQiOiJBYmMxMjMhIiwib3JnYW5pemF0aW9uX2lkIjpudWxsLCJvcmdhbm9ncmFtX2lkIjpudWxsLCJkZXZpY2VfdHlwZSI6IndlYiIsIndlYl9kZXZpY2VfdG9rZW4iOm51bGx9.kMnEFxvzv-cBe0nE_qXyiLlC-KaOaWhJFTMTSyAp2tg"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"activeStep\":8,\"current_active_step\":9,\"is_agreed\":true,\"attachment_type\":\"Printed Application with necessary Signatures\",\"applicant_signature\":\"\",\"safety_equipments\":[],\"attachments\":[{\"id\":null,\"attachment_type\":54,\"is_attachment_type_mandatory\":0,\"attachment_type_en\":\"Printed Application with necessary Signatures\",\"attachment_type_bn\":\"প্রয়োজনীয় স্বাক্ষরসহ প্রিন্ট করা আবেদনের অনুলিপি\",\"attachment_file\":null,\"sort_order\":null}]}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/class-a-application/4",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"class-a-application",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var JsonData = pm.response.json();\r",
+							"\r",
+							"pm.test('Application satus should be Payment Pending', function () {\r",
+							"    pm.expect(JsonData.data.status).to.eql('PAYMENT_PENDING');\r",
+							"})\r",
+							"\r",
+							"pm.test('Step Validation', function () {\r",
+							"    pm.expect(pm.request.activeStep).to.eql(pm.request.current_active_step);\r",
+							"})\r",
+							"\r",
+							"pm.test('Current Active status', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI4ODY3MiwiZXhwIjoxNzAyMzk2NjcyLCJqdGkiOiI1NjlEeUlERDVTIiwidXNlcm5hbWUiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicGFzc3dvcmQiOiJBYmMxMjMhIiwib3JnYW5pemF0aW9uX2lkIjpudWxsLCJvcmdhbm9ncmFtX2lkIjpudWxsLCJkZXZpY2VfdHlwZSI6IndlYiIsIndlYl9kZXZpY2VfdG9rZW4iOm51bGx9.kMnEFxvzv-cBe0nE_qXyiLlC-KaOaWhJFTMTSyAp2tg"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-license.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-license.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"activeStep\":9,\"current_active_step\":10,\"status\":\"PAYMENT_PENDING\"}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/license/class-a-application/4",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"license",
+						"class-a-application",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var Paymentid = pm.response.json()\r",
+							"pm.environment.set(\"id\",Paymentid.id)\r",
+							"\r",
+							"pm.test('Status code is 200', function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en-US;q=0.9,en;q=0.8"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiaWQiOjE2NjgsInV1aWQiOiJmMmEzZjlkMy0zMGE4LTQyZmItYWIxMi1iODY5MDMzYTJiMjEiLCJvcmdhbml6YXRpb25faWQiOm51bGwsIm9yZ2Fub2dyYW1faWQiOm51bGwsIm9yZ2FuaXphdGlvbl9zaG9ydF9uYW1lIjoiIiwib3JnYW5pemF0aW9uX25hbWVfZW4iOiIiLCJvcmdhbml6YXRpb25fbmFtZV9ibiI6IiIsInJvbGVfaWQiOm51bGwsInJvbGVfY29kZSI6bnVsbCwicHJvZmlsZV90eXBlIjpudWxsLCJwcm9maWxlX2lkIjpudWxsLCJuYW1lIjoiTXIuQWJkdWxsYWgiLCJjb21wYW55X25hbWUiOm51bGwsIm1vYmlsZSI6bnVsbCwiZW1haWwiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicmVtZW1iZXJfdG9rZW4iOm51bGwsInN0YXR1cyI6MX0sImlhdCI6MTcwMjI4ODY3MiwiZXhwIjoxNzAyMzk2NjcyLCJqdGkiOiI1NjlEeUlERDVTIiwidXNlcm5hbWUiOiJwZXJtaXQxQHlvcG1haWwuY29tIiwicGFzc3dvcmQiOiJBYmMxMjMhIiwib3JnYW5pemF0aW9uX2lkIjpudWxsLCJvcmdhbm9ncmFtX2lkIjpudWxsLCJkZXZpY2VfdHlwZSI6IndlYiIsIndlYl9kZXZpY2VfdG9rZW4iOm51bGx9.kMnEFxvzv-cBe0nE_qXyiLlC-KaOaWhJFTMTSyAp2tg"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://tr-accounts.most.gov.bd"
+					},
+					{
+						"key": "Referer",
+						"value": "https://tr-accounts.most.gov.bd/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"119\", \"Chromium\";v=\"119\", \"Not?A_Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"identifier\":\"LICENSE_CLASS_A_APPLICATION\",\"organization_id\":null,\"service_mapping_id\":null}"
+				},
+				"url": {
+					"raw": "https://tr-gateway.most.gov.bd/core/payment/payment-gateway-list",
+					"protocol": "https",
+					"host": [
+						"tr-gateway",
+						"most",
+						"gov",
+						"bd"
+					],
+					"path": [
+						"core",
+						"payment",
+						"payment-gateway-list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
