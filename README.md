@@ -9,6 +9,10 @@ Collection
 Environment
 Test results
 Newman for report generation
+
+
+ Postman report
+--------------------------------------
 ![Postman report](https://github.com/Nilufarhossain/API-Testing-/assets/62650301/7052c53e-ce03-459c-9aea-61a7ee32781a)
 
 Lessons Learned
