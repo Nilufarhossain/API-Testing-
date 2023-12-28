@@ -4,11 +4,11 @@ This API testing is done on the IDSDP_MoST_License project's license A user appl
 
 Features that are used in Postman
 --------------------------------------
-HTTP method and HTTP Response Code
-Collection
-Environment
-Test results
-Newman for report generation
+* HTTP method and HTTP Response Code
+* Collection
+* Environment
+* Test results
+* Newman for report generation
 
 
  Postman report
